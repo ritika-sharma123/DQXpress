@@ -1,0 +1,45 @@
+.header {
+  height: 65px;
+  background-color: #001529;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 25px;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+}
+
+.dqx {
+  color: #f26a51;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.press-title {
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.header-nav div,
+img {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.user-profile-div {
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
