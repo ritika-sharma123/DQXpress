@@ -3,6 +3,15 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-left: 10px;
+  height: 55px;
+  font-size: 18px;
+}
+
+.side-button:hover {
+  background-color: #e6f7ff !important;
+  color: $primary-color;
+  border-right: 3px solid $primary-color;
 }
 
 .side-button img:hover {

@@ -1,0 +1,12 @@
+@import "../../assets//scss/mixins";
+
+.custom-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 2px;
+  padding: 10px;
+  font-family: $primary-font;
+}

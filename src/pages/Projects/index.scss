@@ -1,4 +1,11 @@
 .cards-container {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+}
+
+.heading-div {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }

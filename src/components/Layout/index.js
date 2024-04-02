@@ -5,6 +5,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Projects from "../../pages/Projects";
 import SideNav from "../SideNav";
 import "./index.scss";
+import Dashboard from "../../pages/Dashboard";
 
 const Layout = () => {
   return (
@@ -22,7 +23,8 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Navigate replace to="/projects" />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/dashboard" element={<Projects />} />
+            <Route path="/create-project" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </Content>
       </div>

@@ -1,9 +1,15 @@
 import React from "react";
 import "./index.scss";
+import Button from "../Button";
 
-const Card = () => {
+const Card = ({ children }) => {
+  const handleClick = () => {
+    console.log("click");
+  };
+
   return (
     <div className="card">
+      {children}
       <div className="card-title">
         <h2>Project1</h2>
       </div>
@@ -26,7 +32,7 @@ const Card = () => {
         </div>
       </div>
       <div className="button">
-        <button>See Details</button>
+        <Button name={"See Details"} onClick={handleClick}></Button>
       </div>
     </div>
   );

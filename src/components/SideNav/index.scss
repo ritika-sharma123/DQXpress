@@ -1,11 +1,21 @@
 @import "../../assets/scss/mixins";
 .nav-link {
   height: 22px;
-  width: 100%;
   text-decoration: none;
   cursor: pointer;
+  color: inherit;
+  width: inherit;
 }
 
 .side-nav-div {
   width: 208px;
+}
+
+.link-logout {
+  width: 204px;
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  bottom: 0px;
+  position: absolute;
 }

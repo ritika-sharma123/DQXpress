@@ -40,6 +40,9 @@ const SideNav = () => {
           </NavLink>
         );
       })}
+      <NavLink to={`/logout`} className="link-logout">
+        <SideMenubutton name="Logout" image={Logout} />
+      </NavLink>
     </div>
   );
 };
