@@ -1,3 +1,9 @@
+@import "./assets/scss/mixins";
+
+body {
+  font-family: $primary-font;
+}
+
 .container {
   height: 100vh;
 }

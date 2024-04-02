@@ -1,0 +1,10 @@
+@import "../../assets/scss/mixins";
+.side-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.side-button img:hover {
+  fill: $primary-color;
+}

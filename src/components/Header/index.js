@@ -10,7 +10,7 @@ const Header = () => {
     <>
       <div className="header">
         <div className="header-title">
-          <img src={Logo} alt="logo" height="78px" style={{ marginTop: 5 }} />
+          <img src={Logo} alt="logo" height="78px" />
           <span className="dqx">DQX</span>
           <span className="press-title">press</span>
           <span className="press-title">&nbsp;&nbsp;Developer</span>
