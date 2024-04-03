@@ -2,10 +2,11 @@ import React from "react";
 import Header from "../Header";
 import Content from "../Content";
 import { Navigate, Route, Routes } from "react-router-dom";
-import Projects from "../../pages/Projects";
 import SideNav from "../SideNav";
 import "./index.scss";
 import Dashboard from "../../pages/Dashboard";
+import ProjectsPage from "../../pages/Projects/ProjectsPage";
+import CreateProject from "../../pages/Projects/CreateProjectPage";
 
 const Layout = () => {
   return (
@@ -22,8 +23,11 @@ const Layout = () => {
         <Content>
           <Routes>
             <Route path="/" element={<Navigate replace to="/projects" />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/create-project" element={<Dashboard />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route
+              path="/projects/create-project"
+              element={<CreateProject />}
+            />
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </Content>

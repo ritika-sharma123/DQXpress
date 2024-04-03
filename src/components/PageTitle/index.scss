@@ -1,0 +1,14 @@
+.heading-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .img {
+    margin-top: -3px;
+  }
+
+  span {
+    font-size: 26px;
+    font-weight: 600;
+  }
+}

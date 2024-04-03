@@ -8,4 +8,12 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  margin: 15px 0px;
+
+  .buttoncss {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 2px;
+  }
 }
