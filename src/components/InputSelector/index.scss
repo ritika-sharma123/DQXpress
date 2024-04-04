@@ -1,0 +1,19 @@
+.input-selector {
+  display: flex;
+  flex-direction: column;
+
+  select {
+    height: 45px;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 1px solid #8681812e;
+    padding: 0px 10px;
+
+    option {
+      outline: none;
+      background-color: white;
+    }
+  }
+}

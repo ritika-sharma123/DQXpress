@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Styles from "./input.module.scss";
+import "./index.scss";
 
 const Input = ({
   type,
@@ -10,6 +10,7 @@ const Input = ({
   defaultValue,
   value,
   id,
+  label,
   name,
   onChange,
   autoComplete,
@@ -26,41 +27,47 @@ const Input = ({
   switch (type) {
     case "textarea":
       return (
-        <textarea
-          placeholder={placeholder}
-          value={value}
-          id={inputId}
-          name={name}
-          disabled={disabled}
-          className={`${Styles[variant]} ${Styles.input} ${[className]}`}
-          rows={rows}
-          {...reference}
-          onChange={onChange}
-          onKeyUp={onKeyUp}
-          onKeyDown={onKeyDown}
-        ></textarea>
+        <>
+          <label>{label}</label>
+          <textarea
+            placeholder={placeholder}
+            value={value}
+            id={inputId}
+            name={name}
+            disabled={disabled}
+            className={`default ${className}`}
+            rows={rows}
+            {...reference}
+            onChange={onChange}
+            onKeyUp={onKeyUp}
+            onKeyDown={onKeyDown}
+          ></textarea>
+        </>
       );
 
     default:
       return (
-        <input
-          className={`${Styles.input} ${[className]} ${Styles[variant]}`}
-          placeholder={placeholder}
-          autoComplete={autoComplete}
-          disabled={disabled}
-          id={id}
-          type={type}
-          defaultValue={defaultValue}
-          value={value}
-          name={name}
-          {...reference}
-          onChange={onChange}
-          {...pattern}
-          onKeyUp={onKeyUp}
-          onKeyDown={onKeyDown}
-          onKeyPress={onKeyPress}
-          readOnly={readOnly}
-        />
+        <>
+          <label>{label}</label>
+          <input
+            className={`default ${className} `}
+            placeholder={placeholder}
+            autoComplete={autoComplete}
+            disabled={disabled}
+            id={id}
+            type={type}
+            defaultValue={defaultValue}
+            value={value}
+            name={name}
+            {...reference}
+            onChange={onChange}
+            {...pattern}
+            onKeyUp={onKeyUp}
+            onKeyDown={onKeyDown}
+            onKeyPress={onKeyPress}
+            readOnly={readOnly}
+          />
+        </>
       );
   }
 };

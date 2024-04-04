@@ -1,0 +1,37 @@
+@import "../../../assets/scss/mixins";
+
+.project-form-page {
+  padding: 0px 10px;
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+
+  label {
+    font-size: $font-size-medium;
+    font-weight: 500;
+  }
+
+  input {
+    padding: 15px;
+  }
+
+  .textarea-class {
+    min-height: 100px;
+    padding: 15px;
+  }
+}
+
+.button-div {
+  display: flex;
+  gap: 20px;
+
+  .primary-button {
+    color: $white;
+    background-color: $primary-color;
+  }
+}

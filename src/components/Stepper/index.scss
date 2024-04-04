@@ -1,0 +1,25 @@
+@import "../../assets//scss//mixins";
+
+.stepper {
+  margin: 20px 0px;
+  width: 100%;
+
+  .stepper-step {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+
+  .line {
+    width: 100%;
+    height: 5px;
+    background-color: $light-grey;
+    border-radius: 20px;
+  }
+}
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: $primary-color;
+}
