@@ -8,6 +8,10 @@
     display: flex;
     align-items: center;
     gap: 1px;
+
+    .active {
+      background-color: $primary-color !important;
+    }
   }
 
   .line {
@@ -21,5 +25,5 @@
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background-color: $primary-color;
+  background-color: $light-grey;
 }

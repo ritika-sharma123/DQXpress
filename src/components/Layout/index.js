@@ -7,6 +7,7 @@ import "./index.scss";
 import Dashboard from "../../pages/Dashboard";
 import ProjectsPage from "../../pages/Projects/ProjectsPage";
 import CreateProject from "../../pages/Projects/CreateProjectPage";
+import ScoreCards from "../../pages/Projects/ScoreCards";
 
 const Layout = () => {
   return (
@@ -28,6 +29,7 @@ const Layout = () => {
               path="/projects/create-project"
               element={<CreateProject />}
             />
+            <Route path="/score-cards" element={<ScoreCards />} />
             <Route path="/dashboard" element={<Dashboard />} />
           </Routes>
         </Content>

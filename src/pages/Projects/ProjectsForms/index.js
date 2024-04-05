@@ -6,6 +6,7 @@ import Button from "../../../components/Button";
 import Stepper from "../../../components/Stepper";
 import AddDataSourceForm from "./AddDataSourceForm";
 import AddDataTargetForm from "./AddDataTargetForm";
+import { current } from "@reduxjs/toolkit";
 
 const StepperObject = [
   {
@@ -26,16 +27,19 @@ const StepperObject = [
 ];
 
 const ProjectDetailsPage = () => {
+  const numberOfSteps = StepperObject.length;
   const [currentStep, setCurrentStep] = useState(0);
 
   const handlePreviousStep = () => {
-    setCurrentStep((prevState) => currentStep + 1);
+    setCurrentStep((prevState) =>
+      currentStep < 0 ? currentStep : currentStep - 1
+    );
   };
   const handleContinueStep = () => {
-    setCurrentStep((prevState) => currentStep - 1);
+    setCurrentStep((prevState) =>
+      currentStep === numberOfSteps ? currentStep : currentStep + 1
+    );
   };
-
-  console.log("currentStep", currentStep);
 
   function dynamicForms() {
     switch (currentStep) {
@@ -59,7 +63,7 @@ const ProjectDetailsPage = () => {
         {StepperObject.map((i, index) => {
           return (
             <Stepper
-              numberOfsteps={StepperObject.length}
+              numberOfsteps={numberOfSteps}
               currentStep={currentStep}
               label={i.label}
               index={index}
@@ -73,17 +77,17 @@ const ProjectDetailsPage = () => {
           <Button
             name="Next"
             className={"primary-button"}
-            onClick={handlePreviousStep}
+            onClick={handleContinueStep}
           />
         ) : (
           <Button
             name="Continue"
             className={"primary-button"}
-            onClick={handlePreviousStep}
+            onClick={handleContinueStep}
           />
         )}
 
-        <Button name="Cancel" onClick={handleContinueStep} />
+        <Button name="Cancel" onClick={handlePreviousStep} />
       </div>
     </div>
   );
