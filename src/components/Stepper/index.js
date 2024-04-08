@@ -10,7 +10,7 @@ const Stepper = ({ label, numberOfsteps, currentStep, index }) => {
       <div className="stepper-step">
         <div className={`circle ${isActive(index)}`}></div>
         {isFinalStep(index) ? null : (
-          <div className={`line ${isActive(index)}`}></div>
+          <div className={`line ${isActive(index + 1)}`}></div>
         )}
       </div>
       <label>{label}</label>

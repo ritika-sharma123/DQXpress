@@ -41,6 +41,8 @@ const ProjectDetailsPage = () => {
     );
   };
 
+  const handleNextStep = () => {};
+
   function dynamicForms() {
     switch (currentStep) {
       case 0:
@@ -77,7 +79,7 @@ const ProjectDetailsPage = () => {
           <Button
             name="Next"
             className={"primary-button"}
-            onClick={handleContinueStep}
+            onClick={handleNextStep}
           />
         ) : (
           <Button

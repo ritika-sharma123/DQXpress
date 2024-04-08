@@ -13,3 +13,43 @@
     width: 80%;
   }
 }
+
+.search-button {
+  padding: 6px;
+  width: 50px;
+  margin-top: -3px;
+
+  img {
+    height: 20px;
+  }
+}
+
+.charts-div {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+
+  .line-chart {
+    width: 650px;
+    border: none !important;
+  }
+}
+
+.data-progress-percent-div {
+  margin-left: 10px;
+
+  .data-percent {
+    font-size: large;
+    font-weight: 600;
+  }
+
+  .data-change {
+    font-size: small;
+  }
+}
+
+.multiple-cards {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+}
