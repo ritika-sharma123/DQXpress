@@ -6,6 +6,7 @@ import "./index.scss";
 import Card from "../../../components/Card";
 import { LineChart } from "./chartExam";
 import Search from "../../../assets/images/Search.png";
+import ProgressBar from "../../../components/ProgressBar";
 
 export const CardData = ({ title = "Correct", dataPercent }) => {
   return (
@@ -14,6 +15,7 @@ export const CardData = ({ title = "Correct", dataPercent }) => {
       <div className="data-percent">{dataPercent}</div>
       <div>
         <div className="data-change">Change 12%</div>
+        <ProgressBar scale={20} />
       </div>
     </div>
   );

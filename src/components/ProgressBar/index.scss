@@ -1,0 +1,17 @@
+@import "../../assets/scss/mixins";
+
+.progress-bar-div {
+  width: inherit;
+  border-radius: 10px;
+  height: 10px;
+  background-color: $light-grey;
+  margin: 5px 5px 5px 0px;
+
+  .progress-div {
+    background-color: $primary-color !important;
+    width: inherit;
+    border-radius: 10px;
+    height: 10px;
+    background-color: $light-grey;
+  }
+}
