@@ -1,0 +1,59 @@
+@import "../../../assets/scss/mixins";
+
+.rules-title-div {
+  display: flex;
+
+  .input {
+    padding: 15px;
+    width: 80%;
+    margin-left: 50px;
+  }
+
+  .search-button {
+    padding: 6px;
+    width: 50px;
+    margin-top: 0px !important;
+
+    img {
+      height: 20px;
+    }
+  }
+}
+
+.text {
+  font-size: $font-size-medium;
+  color: $light-grey-med;
+  margin: 20px 0px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+
+  .primary-button {
+    background-color: $primary-color;
+    color: $white;
+  }
+}
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+
+  label {
+    font-size: $font-size-medium;
+    font-weight: 500;
+  }
+
+  input {
+    padding: 15px;
+  }
+
+  .textarea-class {
+    min-height: 100px;
+    padding: 15px;
+  }
+}

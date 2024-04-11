@@ -7,6 +7,7 @@ import Stepper from "../../../components/Stepper";
 import AddDataSourceForm from "./AddDataSourceForm";
 import AddDataTargetForm from "./AddDataTargetForm";
 import { current } from "@reduxjs/toolkit";
+import RulesPage from "../DQRules/RulesPage";
 
 const StepperObject = [
   {
