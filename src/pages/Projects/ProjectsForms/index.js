@@ -27,7 +27,7 @@ const StepperObject = [
   },
 ];
 
-const ProjectDetailsPage = () => {
+const ProjectDetailsPage = ({ nextStep }) => {
   const numberOfSteps = StepperObject.length;
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -41,8 +41,6 @@ const ProjectDetailsPage = () => {
       currentStep === numberOfSteps ? currentStep : currentStep + 1
     );
   };
-
-  const handleNextStep = () => {};
 
   function dynamicForms() {
     switch (currentStep) {
@@ -77,11 +75,7 @@ const ProjectDetailsPage = () => {
       {dynamicForms()}
       <div className="button-div">
         {currentStep === StepperObject.length - 1 ? (
-          <Button
-            name="Next"
-            className={"primary-button"}
-            onClick={handleNextStep}
-          />
+          <Button name="Next" className={"primary-button"} onClick={nextStep} />
         ) : (
           <Button
             name="Continue"

@@ -20,16 +20,40 @@ const Data = [
   },
 ];
 
+const StepperObject = [
+  {
+    step: 1,
+    name: "Data Source",
+  },
+  {
+    step: 2,
+    name: "Data Profile",
+  },
+  {
+    step: 3,
+    name: "Score Cards",
+  },
+  {
+    step: 4,
+    name: "DQ Rules",
+  },
+];
+
 const conditionalRenderPage = {
   createRulesManually: <CreateRulesPage />,
   columnDrill: "Column Drill",
 };
 
 const CreateProject = () => {
+  const [currentStep, setCurrentStep] = useState(0);
   const [renderSubPage, setRenderSubPage] = useState("");
 
   const handlecreaterule = () => {
     setRenderSubPage("createRulesManually");
+  };
+
+  const handleNextStep = () => {
+    setCurrentStep((prev) => (prev <= StepperObject.length ? prev + 1 : prev));
   };
 
   return (
@@ -40,10 +64,13 @@ const CreateProject = () => {
         conditionalRenderPage[renderSubPage]
       ) : (
         <div className="stepper-content-div">
-          <ProgressStepper />
+          <ProgressStepper
+            numberOfSteps={StepperObject}
+            currentStep={currentStep}
+          />
           <StepperContent>
-            {/* <ProjectDetailsPage /> */}
-            <RulesPage handlecreaterule={handlecreaterule} />
+            <ProjectDetailsPage nextStep={handleNextStep} />
+            {/* <RulesPage handlecreaterule={handlecreaterule} /> */}
           </StepperContent>
         </div>
       )}
