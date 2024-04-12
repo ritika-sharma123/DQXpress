@@ -1,10 +1,10 @@
 import React from "react";
 import Button from "../../../components/Button";
 
-const DataProfile = ({ handleNextStep, handlePreviousStep }) => {
+const WorkflowsPage = ({ handleNextStep, handlePreviousStep }) => {
   return (
     <>
-      Data Profile
+      Workflow
       <Button name={"Next"} onClick={handleNextStep} />
       <Button name="Previous" onClick={handlePreviousStep} />
       <Button name={"Cancel"} />
@@ -12,4 +12,4 @@ const DataProfile = ({ handleNextStep, handlePreviousStep }) => {
   );
 };
 
-export default DataProfile;
+export default WorkflowsPage;

@@ -1,15 +1,15 @@
 import React from "react";
 import Button from "../../../components/Button";
 
-const DataProfile = ({ handleNextStep, handlePreviousStep }) => {
+const CorrectedDataPage = ({ handleNextStep, handlePreviousStep }) => {
   return (
     <>
-      Data Profile
+      Corrected Data
       <Button name={"Next"} onClick={handleNextStep} />
-      <Button name="Previous" onClick={handlePreviousStep} />
+      <Button name={"Previous"} onClick={handlePreviousStep} />
       <Button name={"Cancel"} />
     </>
   );
 };
 
-export default DataProfile;
+export default CorrectedDataPage;

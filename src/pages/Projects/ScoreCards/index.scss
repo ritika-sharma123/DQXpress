@@ -30,7 +30,7 @@
   margin: 20px 0px;
 
   .line-chart {
-    width: 650px;
+    width: 600px;
     border: none !important;
   }
 }
@@ -52,4 +52,9 @@
   margin: 20px 0px;
   display: flex;
   justify-content: space-between;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
 }

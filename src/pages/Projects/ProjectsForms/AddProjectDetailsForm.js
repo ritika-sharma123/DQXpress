@@ -37,10 +37,10 @@ const AddProjectDetailsForm = () => {
         />
       </div>
       <div className="input-label">
-        <InputSelector label="Source Database" options={Options} />
+        <InputSelector label="Source" options={Options} />
       </div>
       <div className="input-label">
-        <InputSelector label="Target Database" options={Options} />
+        <InputSelector label="Target" options={Options} />
       </div>
     </div>
   );

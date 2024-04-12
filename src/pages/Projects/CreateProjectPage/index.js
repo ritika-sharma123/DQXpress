@@ -8,6 +8,11 @@ import AddProjectDetailsForm from "../ProjectsForms/AddProjectDetailsForm";
 import ProjectDetailsPage from "../ProjectsForms";
 import RulesPage from "../DQRules/RulesPage";
 import CreateRulesPage from "../DQRules/CreateRulesPage";
+import DataProfile from "../DataProfile";
+import ScoreCards from "../ScoreCards";
+import ExceptionHandlingPage from "../ExceptionHandling";
+import CorrectedDataPage from "../CorrectedData";
+import WorkflowsPage from "../Workflows";
 
 const Data = [
   {
@@ -37,6 +42,18 @@ const StepperObject = [
     step: 4,
     name: "DQ Rules",
   },
+  {
+    step: 5,
+    name: "Exception Handling",
+  },
+  {
+    step: 6,
+    name: "Corrected Data",
+  },
+  {
+    step: 7,
+    name: "Workflows",
+  },
 ];
 
 const conditionalRenderPage = {
@@ -56,6 +73,57 @@ const CreateProject = () => {
     setCurrentStep((prev) => (prev <= StepperObject.length ? prev + 1 : prev));
   };
 
+  const handlePreviousStep = () => {
+    setCurrentStep((prev) => (prev >= currentStep ? prev - 1 : prev));
+  };
+
+  function dynamicStepperContent() {
+    switch (currentStep) {
+      case 0:
+        return <ProjectDetailsPage nextStep={handleNextStep} />;
+      case 1:
+        return (
+          <DataProfile
+            handleNextStep={handleNextStep}
+            handlePreviousStep={handlePreviousStep}
+          />
+        );
+      case 2:
+        return (
+          <ScoreCards
+            handleNextStep={handleNextStep}
+            handlePreviousStep={handlePreviousStep}
+          />
+        );
+      case 3:
+        return (
+          <RulesPage
+            handleNextStep={handleNextStep}
+            handlecreaterule={handlecreaterule}
+            handlePreviousStep={handlePreviousStep}
+          />
+        );
+      case 4:
+        return (
+          <ExceptionHandlingPage
+            handleNextStep={handleNextStep}
+            handlePreviousStep={handlePreviousStep}
+          />
+        );
+      case 5:
+        return (
+          <ScoreCards
+            handleNextStep={handleNextStep}
+            handlePreviousStep={handlePreviousStep}
+          />
+        );
+      case 6:
+        return <WorkflowsPage handlePreviousStep={handlePreviousStep} />;
+      default:
+        return <ProjectDetailsPage />;
+    }
+  }
+
   return (
     <div>
       <Breadcrumbs data={Data} />
@@ -68,10 +136,7 @@ const CreateProject = () => {
             numberOfSteps={StepperObject}
             currentStep={currentStep}
           />
-          <StepperContent>
-            <ProjectDetailsPage nextStep={handleNextStep} />
-            {/* <RulesPage handlecreaterule={handlecreaterule} /> */}
-          </StepperContent>
+          <StepperContent>{dynamicStepperContent()}</StepperContent>
         </div>
       )}
     </div>

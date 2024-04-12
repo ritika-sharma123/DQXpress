@@ -21,7 +21,7 @@ export const CardData = ({ title = "Correct", dataPercent }) => {
   );
 };
 
-const ScoreCards = () => {
+const ScoreCards = ({ handleNextStep, handlePreviousStep }) => {
   return (
     <div className="score-card-page">
       <div className="title-button-div">
@@ -58,9 +58,9 @@ const ScoreCards = () => {
           <CardData dataPercent="25%" />
         </Card>
       </div>
-      <div>
-        <Button name="Next" />
-        <Button name="Previous" />
+      <div className="button-group">
+        <Button name="Next" onClick={handleNextStep} />
+        <Button name="Previous" onClick={handlePreviousStep} />
         <Button name="Cancel" />
       </div>
     </div>

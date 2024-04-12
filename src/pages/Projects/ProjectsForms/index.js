@@ -17,12 +17,12 @@ const StepperObject = [
   },
   {
     step: 1,
-    label: "Source Database",
+    label: "Data Source",
     title: "Add Data Source",
   },
   {
     step: 2,
-    label: "Target Database",
+    label: "Data Target",
     title: "Add Data Target",
   },
 ];
@@ -83,8 +83,8 @@ const ProjectDetailsPage = ({ nextStep }) => {
             onClick={handleContinueStep}
           />
         )}
-
-        <Button name="Cancel" onClick={handlePreviousStep} />
+        <Button name="Previous" onClick={handlePreviousStep} />
+        <Button name="Cancel" />
       </div>
     </div>
   );
