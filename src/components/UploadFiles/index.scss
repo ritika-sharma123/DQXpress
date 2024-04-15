@@ -1,0 +1,32 @@
+@import "../../assets/scss/mixins";
+
+.upload-file-div {
+  height: 150px;
+  width: 100%;
+  background-color: $light-grey;
+  margin-bottom: 20px;
+  text-align: center;
+
+  img {
+    margin-top: 5px;
+  }
+
+  .upload-input {
+    border: none;
+    outline: none;
+    display: none;
+  }
+
+  span {
+    margin: 2px;
+    font-weight: 500;
+    font-size: medium;
+  }
+
+  .sub-text {
+    margin: 2px;
+    font-weight: 500;
+    font-size: medium;
+    color: $light-grey-med;
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Input from "../../../components/Input";
 import InputSelector from "../../../components/InputSelector";
 import PageTitle from "../../../components/PageTitle";
+import UploadFiles from "../../../components/UploadFiles";
 
 const Options = [
   {
@@ -19,6 +20,9 @@ const CreateRulesPage = () => {
     <>
       <div className="input-label">
         <InputSelector label="Rule Type" options={Options} />
+      </div>
+      <div>
+        <UploadFiles />
       </div>
       <div className={"input-label"}>
         <Input
