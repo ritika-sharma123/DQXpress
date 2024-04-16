@@ -5,7 +5,6 @@ import FileUpload from "../../assets/images/Inbox.png";
 
 const UploadFiles = ({ uploadFile }) => {
   const processFiles = (files) => {
-    console.log(files);
     const file = files.target.files[0].name;
     const extension = file.split(".");
     uploadFile(files);

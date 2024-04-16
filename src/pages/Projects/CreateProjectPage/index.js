@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PageTitle from "../../../components/PageTitle";
 import Breadcrumbs from "../../../components/BreadCrumbs/index";
 import ProgressStepper from "../../../components/ProgressStepper";
@@ -13,6 +13,7 @@ import ScoreCards from "../ScoreCards";
 import ExceptionHandlingPage from "../ExceptionHandling";
 import CorrectedDataPage from "../CorrectedData";
 import WorkflowsPage from "../Workflows";
+import { useNavigate } from "react-router-dom";
 
 const Data = [
   {
@@ -61,12 +62,25 @@ const conditionalRenderPage = {
   columnDrill: "Column Drill",
 };
 
-const CreateProject = () => {
+const CreateProject = ({ setId }) => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(0);
   const [renderSubPage, setRenderSubPage] = useState("");
+  const [breadcrumbsData, setBreadcrumbsData] = useState([
+    {
+      text: "Projects",
+      path: "/projects",
+    },
+    {
+      text: "Create New Project",
+      path: "/projects/create-project",
+    },
+  ]);
 
   const handlecreaterule = () => {
     setRenderSubPage("createRulesManually");
+    navigate("/projects/create-project/create-new-rule/");
+    localStorage.setItem("createRulesManually", 4);
   };
 
   const handleNextStep = () => {
@@ -126,19 +140,15 @@ const CreateProject = () => {
 
   return (
     <div>
-      <Breadcrumbs data={Data} />
+      <Breadcrumbs data={breadcrumbsData} />
       <PageTitle name={"New Project"} isImg />
-      {["createRulesManually", "columnDrill"].includes(renderSubPage) ? (
-        conditionalRenderPage[renderSubPage]
-      ) : (
-        <div className="stepper-content-div">
-          <ProgressStepper
-            numberOfSteps={StepperObject}
-            currentStep={currentStep}
-          />
-          <StepperContent>{dynamicStepperContent()}</StepperContent>
-        </div>
-      )}
+      <div className="stepper-content-div">
+        <ProgressStepper
+          numberOfSteps={StepperObject}
+          currentStep={currentStep}
+        />
+        <StepperContent>{dynamicStepperContent()}</StepperContent>
+      </div>
     </div>
   );
 };
