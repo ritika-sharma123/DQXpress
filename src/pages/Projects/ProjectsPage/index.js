@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "../../../components/Card";
 import "./index.scss";
 import Button from "../../../components/Button";
@@ -42,6 +42,10 @@ const ProjectsPage = () => {
   const handleCreateProject = () => {
     navigate("/projects/create-project");
   };
+
+  useEffect(() => {
+    return () => localStorage.removeItem("createRulesManually");
+  }, []);
 
   return (
     <div>

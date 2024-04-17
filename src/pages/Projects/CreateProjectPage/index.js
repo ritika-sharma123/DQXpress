@@ -56,7 +56,6 @@ const CreateProject = ({ setId }) => {
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const [currentStep, setCurrentStep] = useState(0);
-  const [renderSubPage, setRenderSubPage] = useState("");
   const [breadcrumbsData, setBreadcrumbsData] = useState([
     {
       text: "Projects",
@@ -68,8 +67,6 @@ const CreateProject = ({ setId }) => {
     },
   ]);
 
-  console.log(localStorage.getItem("createRulesManually") === "4");
-
   useEffect(() => {
     if (localStorage.getItem("createRulesManually") === "4") {
       setCurrentStep(3);
@@ -79,7 +76,6 @@ const CreateProject = ({ setId }) => {
   }, []);
 
   const handlecreaterule = () => {
-    // setRenderSubPage("createRulesManually");
     navigate("/projects/create-project/create-new-rule/");
     localStorage.setItem("createRulesManually", 4);
   };
