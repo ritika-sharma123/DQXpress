@@ -9,6 +9,7 @@ import ProjectsPage from "../../pages/Projects/ProjectsPage";
 import CreateProject from "../../pages/Projects/CreateProjectPage";
 import ScoreCards from "../../pages/Projects/ScoreCards";
 import CreateRulesPage from "../../pages/Projects/DQRules/CreateRulesPage";
+import LoginPage from "../../pages/LoginPage";
 
 const Layout = () => {
   const id = localStorage.getItem("createRulesManually");

@@ -13,18 +13,8 @@ import ScoreCards from "../ScoreCards";
 import ExceptionHandlingPage from "../ExceptionHandling";
 import CorrectedDataPage from "../CorrectedData";
 import WorkflowsPage from "../Workflows";
-import { useNavigate } from "react-router-dom";
-
-const Data = [
-  {
-    text: "Projects",
-    path: "/projects",
-  },
-  {
-    text: "Create New Project",
-    path: "/projects/create-project",
-  },
-];
+import { useLocation, useNavigate } from "react-router-dom";
+import ArrowLeft from "../../../assets/images/ArrowLeft.png";
 
 const StepperObject = [
   {
@@ -64,6 +54,7 @@ const conditionalRenderPage = {
 
 const CreateProject = ({ setId }) => {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [currentStep, setCurrentStep] = useState(0);
   const [renderSubPage, setRenderSubPage] = useState("");
   const [breadcrumbsData, setBreadcrumbsData] = useState([
@@ -76,6 +67,8 @@ const CreateProject = ({ setId }) => {
       path: "/projects/create-project",
     },
   ]);
+
+  console.log(pathname);
 
   const handlecreaterule = () => {
     setRenderSubPage("createRulesManually");
@@ -141,7 +134,21 @@ const CreateProject = ({ setId }) => {
   return (
     <div>
       <Breadcrumbs data={breadcrumbsData} />
-      <PageTitle name={"New Project"} isImg />
+      {pathname === "/projects/create-project" ? (
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <img
+            src={ArrowLeft}
+            height="16"
+            width="19"
+            alt=""
+            onClick={() => navigate("/projects")}
+            className="img"
+          />
+          <PageTitle name={"New Project"} />
+        </div>
+      ) : (
+        <PageTitle name={"New Project"} isImg />
+      )}
       <div className="stepper-content-div">
         <ProgressStepper
           numberOfSteps={StepperObject}
