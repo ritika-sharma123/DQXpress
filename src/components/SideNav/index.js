@@ -7,6 +7,8 @@ import Bar from "../../assets/images/Bars.svg";
 import Control from "../../assets/images/Control.svg";
 import Question from "../../assets/images/Question.svg";
 import SideMenubutton from "../SideMenuButton";
+
+
 const Data = [
   {
     name: "Dashboard",
