@@ -14,7 +14,6 @@ import LoginPage from "../../pages/LoginPage";
 const Layout = () => {
   const id = localStorage.getItem("createRulesManually");
 
-  let path = "/projects/create-project/";
   return (
     <div>
       <Header />

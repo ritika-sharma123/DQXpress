@@ -37,9 +37,10 @@ const CreateRulesPage = () => {
   const navigate = useNavigate();
 
   const handleBackButton = () => {
-    localStorage.removeItem("createRulesManually");
+    // localStorage.removeItem("createRulesManually");
     navigate("/projects/create-project");
   };
+
   return (
     <>
       <Breadcrumbs data={breadcrumbsData} />

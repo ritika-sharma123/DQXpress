@@ -68,10 +68,18 @@ const CreateProject = ({ setId }) => {
     },
   ]);
 
-  console.log(pathname);
+  console.log(localStorage.getItem("createRulesManually") === "4");
+
+  useEffect(() => {
+    if (localStorage.getItem("createRulesManually") === "4") {
+      setCurrentStep(3);
+    } else {
+      setCurrentStep(currentStep);
+    }
+  }, []);
 
   const handlecreaterule = () => {
-    setRenderSubPage("createRulesManually");
+    // setRenderSubPage("createRulesManually");
     navigate("/projects/create-project/create-new-rule/");
     localStorage.setItem("createRulesManually", 4);
   };
