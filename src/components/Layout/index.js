@@ -9,6 +9,12 @@ import ProjectsPage from "../../pages/Projects/ProjectsPage";
 import CreateProject from "../../pages/Projects/CreateProjectPage";
 import ScoreCards from "../../pages/Projects/ScoreCards";
 import CreateRulesPage from "../../pages/Projects/DQRules/CreateRulesPage";
+import DataprofileForm from "../../pages/Projects/ProjectsForms/DataProfileForm";
+import LoanForm from "../../pages/Projects/ProjectsForms/LoanForm";
+import LoanForm2 from "../DataTable/loanform";
+import ExceptionForm2 from "../DataTable/exceptionform";
+
+
 
 const Layout = () => {
   const id = localStorage.getItem("createRulesManually");
@@ -39,6 +45,11 @@ const Layout = () => {
             />
             <Route path="/score-cards" element={<ScoreCards />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dataprofile" element={<DataprofileForm />} />
+            <Route path="/loanform" element={<LoanForm2 />} />
+            <Route path="/exceptionform" element={<ExceptionForm2 />} />
+            
+
           </Routes>
         </Content>
       </div>

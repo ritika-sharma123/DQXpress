@@ -5,10 +5,10 @@ import DataTable from 'react-data-table-component';
 
 import "./index.scss";
 
-function DataTable1() {
+function ExceptionForm2() {
     const columns = [
         {
-            name: 'Column Name',
+            name: 'asd',
             selector:row => row.columnname,
             sortable: true
 
@@ -19,20 +19,9 @@ function DataTable1() {
             sortable: true
         },
 
-        {
-            name: "Null#",
-            selector:row => row.null,
-            sortable: true
-        },
-        {
-            name: "Distinct%",
-            selector:row => row.distinct
-        },
-        {
-            name: "Distinct#",
-            selector:row => row.null
-        },
-
+        
+        
+        
     ];
     const data = [
         {
@@ -67,4 +56,4 @@ function DataTable1() {
         </div>
     )
 }
-export default DataTable1;
+export default ExceptionForm2;

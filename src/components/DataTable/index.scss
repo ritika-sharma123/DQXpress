@@ -1,0 +1,10 @@
+@import "../../assets//scss/mixins";
+
+.default {
+  border: none;
+  border: 2px solid $light-grey;
+  border-radius: 2px;
+  padding: 18px;
+  outline: none;
+  width: 950px;
+}
