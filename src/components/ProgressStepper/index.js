@@ -4,6 +4,8 @@ import "./index.scss";
 const ProgressStepper = ({ currentStep, numberOfSteps }) => {
   const isActive = (index) => (currentStep >= index ? "active" : "");
   const isFinalStep = (index) => index === numberOfSteps.length - 1;
+  const isActiveState = (index) =>
+    currentStep >= index + 1 ? "active-state" : "";
 
   return (
     <div className="progress-stepper-div">
@@ -11,7 +13,11 @@ const ProgressStepper = ({ currentStep, numberOfSteps }) => {
         return (
           <div className="stepper-label-div">
             <div className="progress-circle-div">
-              <div className={`progress-circle ${isActive(index)}`}>
+              <div
+                className={`progress-circle ${isActive(index)} ${isActiveState(
+                  index
+                )}`}
+              >
                 {i.step}
               </div>
               {!isFinalStep(index) ? (
