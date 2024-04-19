@@ -6,7 +6,7 @@ import Union from "../../../assets/images/Union.png";
 import { useNavigate } from "react-router-dom";
 import PageTitle from "../../../components/PageTitle";
 
-export const DummyCard = () => {
+export const ProjectDetail = ({ handleSeeDetails }) => {
   return (
     <>
       <div className="card-title">
@@ -31,7 +31,7 @@ export const DummyCard = () => {
         </div>
       </div>
       <div className="button">
-        <Button name={"See Details"} onClick={() => {}}></Button>
+        <Button name={"See Details"} onClick={handleSeeDetails}></Button>
       </div>
     </>
   );
@@ -41,6 +41,10 @@ const ProjectsPage = () => {
   const navigate = useNavigate();
   const handleCreateProject = () => {
     navigate("/projects/create-project");
+  };
+
+  const handleSeeDetails = () => {
+    navigate("/projects/project-details");
   };
 
   useEffect(() => {
@@ -61,13 +65,13 @@ const ProjectsPage = () => {
       </div>
       <div className="cards-container">
         <Card>
-          <DummyCard />
+          <ProjectDetail handleSeeDetails={handleSeeDetails} />
         </Card>
         <Card>
-          <DummyCard />
+          <ProjectDetail />
         </Card>
         <Card>
-          <DummyCard />
+          <ProjectDetail />
         </Card>
       </div>
     </div>

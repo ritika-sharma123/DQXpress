@@ -5,11 +5,13 @@ import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import SideNav from "../SideNav";
 import "./index.scss";
 import Dashboard from "../../pages/Dashboard";
-import ProjectsPage from "../../pages/Projects/ProjectsPage";
+import ProjectsPage, { ProjectDetail } from "../../pages/Projects/ProjectsPage";
 import CreateProject from "../../pages/Projects/CreateProjectPage";
 import ScoreCards from "../../pages/Projects/ScoreCards";
 import CreateRulesPage from "../../pages/Projects/DQRules/CreateRulesPage";
 import LoginPage from "../../pages/LoginPage";
+import File from "../../pages/File";
+import ProjectDetailsPage from "../../pages/Projects/ProjectDetailPage";
 
 const Layout = () => {
   const id = localStorage.getItem("createRulesManually");
@@ -29,6 +31,7 @@ const Layout = () => {
           <Routes>
             <Route path="/" element={<Navigate replace to="/projects" />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/file-explorer" element={<File />} />
             <Route
               path="/projects/create-project/create-new-rule/"
               element={<CreateRulesPage />}
@@ -36,6 +39,10 @@ const Layout = () => {
             <Route
               path="/projects/create-project/"
               element={<CreateProject />}
+            />
+            <Route
+              path="/projects/project-details"
+              element={<ProjectDetailsPage />}
             />
             <Route path="/score-cards" element={<ScoreCards />} />
             <Route path="/dashboard" element={<Dashboard />} />
