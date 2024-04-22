@@ -70,6 +70,8 @@ const CreateProject = ({ setId }) => {
   useEffect(() => {
     if (localStorage.getItem("createRulesManually") === "4") {
       setCurrentStep(3);
+    } else if (localStorage.getItem("loan-id") === "2") {
+      setCurrentStep(1);
     } else {
       setCurrentStep(currentStep);
     }

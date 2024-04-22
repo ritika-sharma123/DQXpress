@@ -1,5 +1,6 @@
 import React from "react";
 import "./index.scss";
+import Check from "../../assets/images/Check.png";
 
 const ProgressStepper = ({ currentStep, numberOfSteps }) => {
   const isActive = (index) => (currentStep >= index ? "active" : "");
@@ -18,7 +19,11 @@ const ProgressStepper = ({ currentStep, numberOfSteps }) => {
                   index
                 )}`}
               >
-                {i.step}
+                {isActiveState(index) ? (
+                  <img src={Check} alt="i" />
+                ) : (
+                  <>{i.step}</>
+                )}
               </div>
               {!isFinalStep(index) ? (
                 <div className={`progress-line ${isActive(index + 1)}`}></div>

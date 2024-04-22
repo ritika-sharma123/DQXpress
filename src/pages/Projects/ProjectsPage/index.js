@@ -48,7 +48,7 @@ const ProjectsPage = () => {
   };
 
   useEffect(() => {
-    return () => localStorage.removeItem("createRulesManually");
+    return () => localStorage.clear();
   }, []);
 
   return (

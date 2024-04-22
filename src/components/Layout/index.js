@@ -12,6 +12,7 @@ import CreateRulesPage from "../../pages/Projects/DQRules/CreateRulesPage";
 import LoginPage from "../../pages/LoginPage";
 import File from "../../pages/File";
 import ProjectDetailsPage from "../../pages/Projects/ProjectDetailPage";
+import LoanIdPage from "../../pages/Projects/DataProfile/LoanIdPage";
 
 const Layout = () => {
   const id = localStorage.getItem("createRulesManually");
@@ -39,6 +40,10 @@ const Layout = () => {
             <Route
               path="/projects/create-project/"
               element={<CreateProject />}
+            />
+            <Route
+              path="/projects/create-project/loan-id/"
+              element={<LoanIdPage />}
             />
             <Route
               path="/projects/project-details"
