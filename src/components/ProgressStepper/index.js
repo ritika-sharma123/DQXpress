@@ -31,7 +31,7 @@ const ProgressStepper = ({ currentStep, numberOfSteps }) => {
                 ""
               )}
             </div>
-            <div>{i.name}</div>
+            <div className="label-stepper">{i.name}</div>
           </div>
         );
       })}
