@@ -8,13 +8,13 @@ import "./index.scss";
 function LoanForm2() {
     const columns = [
         {
-            name: 'asd',
+            name: 'S.No',
             selector:row => row.columnname,
             sortable: true
 
         },
         {
-            name: "Null%",
+            name: "Null#",
             selector:row => row.null,
             sortable: true
         },

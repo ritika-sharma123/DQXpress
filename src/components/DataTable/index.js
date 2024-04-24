@@ -3,7 +3,11 @@ import React from 'react';
 //import React, { usestate } from 'react'
 import DataTable from 'react-data-table-component';
 
+
 import "./index.scss";
+
+
+
 
 function DataTable1() {
     const columns = [
@@ -54,9 +58,10 @@ function DataTable1() {
    
     
     return(
-        <div className='container mt-5'>
+        <div className='container mt-5' >
            
-            <DataTable 
+           <DataTable  
+            
             columns={ columns}
             data={data}
             selectableRows

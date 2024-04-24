@@ -14,7 +14,7 @@ function ExceptionForm2() {
 
         },
         {
-            name: "Null%",
+            name: "Description",
             selector:row => row.null,
             sortable: true
         },
@@ -38,12 +38,20 @@ function ExceptionForm2() {
             null: '27',
             distinct : 'adad',
         },
-       
+        {
+
+            id: 3,
+            columnname:'ramesh',
+            null: '27',
+            distinct : 'adad',
+        },
     ]
    
     
     return(
-        <div className='container mt-5'>
+        
+        < div className='container mt-5' columns='5'row='10' widht='100%'>
+           
            
             <DataTable 
             columns={ columns}
@@ -51,9 +59,12 @@ function ExceptionForm2() {
             selectableRows
             fixedHeader
             pagination
+          
             ></DataTable>
+             </div>
 
-        </div>
+        
+       
     )
 }
 export default ExceptionForm2;
