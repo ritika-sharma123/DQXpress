@@ -1,10 +1,87 @@
-
-import React from 'react';
-//import React, { usestate } from 'react'
-import DataTable from 'react-data-table-component';
-
-
+import React from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import { Box } from "@mui/material";
+import { blue, green } from "@mui/material/colors";
 import "./index.scss";
+
+const columns = [
+  {
+   
+    field: "firstName",
+    headerName: "Column Name",
+    flex: 1,
+    align: "center",
+    headerAlign: "center",
+   
+  },
+  
+  {
+    field: "lastName",
+    headerName: "Null%",
+    flex: 1,
+    align: "center",
+    headerAlign: "center",
+  },
+  {
+    field: "age",
+    headerName: "Null# ?",
+    flex: 1,
+    type: "number",
+    align: "center",
+    headerAlign: "center",
+    
+  },
+  {
+    field: "fullName",
+    headerName: "Distinct# ?",
+    flex: 1,
+    align: "center",
+    headerAlign: "center",
+    description: "This column has a value getter and is not sortable.",
+    sortable: false,
+    valueGetter: (value, row) => `${row.firstName || ""} ${row.lastName || ""}`,
+  },
+  {
+    field: "fullNam1e",
+    headerName: "Distinct",
+    flex: 1,
+    align: "center",
+    headerAlign: "center",
+    description: "This column has a value getter and is not sortable.",
+    sortable: false,
+    valueGetter: (value, row) => `${row.firstName || ""} ${row.lastName || ""}`,
+    
+  },
+];
+
+
+const DataTable = () => {
+  return (
+    <>
+      <Box
+        sx={{
+          height: 400,
+          width: "100%",
+          marginBottom: "100px",
+        }}
+      >
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          initialState={{
+            pagination: {
+              paginationModel: {
+                pageSize: 10,
+              },
+            },
+          }}
+          pageSizeOptions={[10]}
+          disableRowSelectionOnClick
+        />
+      </Box>
+    </>
+  );
+};
 
 
 

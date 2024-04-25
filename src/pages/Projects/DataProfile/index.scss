@@ -6,11 +6,16 @@
 .rules-title-div {
   display: flex;
 
-  .input {
-    padding: 15px;
-    width: 50%;
-    margin-left: 50px;
-  }
+.input {
+  margin: 10px 0px;
+  padding: 10px;
+  width: 80%;
+
+}
+.search-button {
+  padding: 6px;
+  width: 50px;
+  margin-top: -3px;
 
   .search-button {
     padding: 6px;
@@ -219,4 +224,5 @@ cursor: initial;
 .rc-pagination-total-text button:hover {
   background-color: #eceff5;
   border-color: #eceff5;
+}
 }
