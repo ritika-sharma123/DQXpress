@@ -1,10 +1,14 @@
 import React from "react";
-import { DataGrid } from "@mui/x-data-grid";
-import { Box } from "@mui/material";
 import { blue, green } from "@mui/material/colors";
 import "./index.scss";
+import { DataTable } from "./DataTable";
+import { DataGrid } from "@mui/x-data-grid";
+import { Box } from "@mui/material";
 
-const columns = [
+
+
+
+export const columns = [
   {
    
     field: "firstName",
@@ -53,100 +57,44 @@ const columns = [
     
   },
 ];
+const rows = [
+    { id: 1, lastName: "Snow", firstName: "Jon", age: 14 },
+    { id: 2, lastName: "Lannister", firstName: "Cersei", age: 31 },
+    { id: 3, lastName: "Lannister", firstName: "Jaime", age: 31 },
+    { id: 4, lastName: "Stark", firstName: "Arya", age: 11 },
+    { id: 5, lastName: "Targaryen", firstName: "Daenerys", age: null },
+    { id: 6, lastName: "Melisandre", firstName: null, age: 150 },
+    { id: 7, lastName: "Clifford", firstName: "Ferrara", age: 44 },
+    { id: 8, lastName: "Frances", firstName: "Rossini", age: 36 },
+    { id: 9, lastName: "Roxie", firstName: "Harvey", age: 65 },
+  ];
 
-
-const DataTable = () => {
-  return (
-    <>
-      <Box
-        sx={{
-          height: 400,
-          width: "100%",
-          marginBottom: "100px",
-        }}
-      >
-        <DataGrid
-          rows={rows}
-          columns={columns}
-          initialState={{
-            pagination: {
-              paginationModel: {
-                pageSize: 10,
-              },
-            },
+  const DataTable1 = () => {
+    return (
+      <>
+        <Box
+          sx={{
+            height: 400,
+            width: "100%",
+            marginBottom: "10px",
           }}
-          pageSizeOptions={[10]}
-          disableRowSelectionOnClick
-        />
-      </Box>
-    </>
-  );
-};
-
-
-
-
-function DataTable1() {
-    const columns = [
-        {
-            name: 'Column Name',
-            selector:row => row.columnname,
-            sortable: true
-
-        },
-        {
-            name: "Null%",
-            selector:row => row.null,
-            sortable: true
-        },
-
-        {
-            name: "Null#",
-            selector:row => row.null,
-            sortable: true
-        },
-        {
-            name: "Distinct%",
-            selector:row => row.distinct
-        },
-        {
-            name: "Distinct#",
-            selector:row => row.null
-        },
-
-    ];
-    const data = [
-        {
-            id: 1,
-            columnname:'shamu',
-            null: '25',
-            distinct : 'adad',
-
-        },
-        {
-
-            id: 2,
-            columnname:'ramesh',
-            null: '27',
-            distinct : 'adad',
-        },
-       
-    ]
-   
-    
-    return(
-        <div className='container mt-5' >
-           
-           <DataTable  
-            
-            columns={ columns}
-            data={data}
-            selectableRows
-            fixedHeader
-            pagination
-            ></DataTable>
-
-        </div>
-    )
-}
-export default DataTable1;
+        >
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            initialState={{
+              pagination: {
+                paginationModel: {
+                  pageSize: 10,
+                },
+              },
+            }}
+            pageSizeOptions={[10]}
+            disableRowSelectionOnClick
+          />
+        </Box>
+      </>
+    );
+  };
+  
+  export default DataTable1;
