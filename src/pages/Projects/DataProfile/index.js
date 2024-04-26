@@ -8,11 +8,17 @@ import Search from "../../../assets/images/Search.png";
 import Filter from "../../../assets/images/Filter alt.png";
 
 const DataTableWrapper = styled.section`
-    .MuiDataGrid-container--top [role=row], .MuiDataGrid-container--bottom [role=row]
-    {
-      background: #B0C4DE !important;
-      border-color: #B0C4DE;
+    .MuiDataGrid-container--top [role=row], .MuiDataGrid-container--bottom [role=row].MuiDataGrid-columnHeaderTitleContainer --top[role=row]
+ {
+  
+      background: #E6F7FF !important;
+      border-color: #ffff;
       color: #ffffff !important;
+ }
+ .MuiDataGrid-columnHeaderTitleContainer
+ {
+  color:black;
+ }
 
 `;
 
